@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.USE_BIOMETRIC"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/logo_ecobites"
+        android:label="EcoBites"
+        android:roundIcon="@drawable/logo_ecobites"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        android:enableOnBackInvokedCallback="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".view.CheckoutActivity"
+            android:exported="true"
+            android:label="Merchant Demo"
+            android:launchMode="singleTask">
+        <intent-filter>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.DEFAULT" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="demozpdk"
+                android:host="app" />
+        </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.CartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.DetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ListFoodsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.MainActivity"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".view.SignupActivity"
+
+            android:exported="false" />
+        <activity
+            android:name=".view.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.BaseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.IntroActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.PaymentStatusActivity" />
+
+        <activity android:name=".view.MapActivity" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDg0Kfi1D_8_f3UxYFE_Ym8Azwt79boHwk" />
+    </application>
+
+</manifest>
